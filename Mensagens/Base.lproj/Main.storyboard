@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +57,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mensagem" id="WDe-8E-6lo"/>
+                    <navigationItem key="navigationItem" title="Mensagem" id="WDe-8E-6lo">
+                        <barButtonItem key="rightBarButtonItem" title="Próxima" id="m5e-kU-rmp">
+                            <connections>
+                                <segue destination="XcZ-3k-ieU" kind="show" id="5aJ-og-ho1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbMessage" destination="1Ar-wb-N4P" id="8bF-Nk-Mrh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-XH-Xvf">
-                                <rect key="frame" x="45" y="60" width="285" height="310"/>
+                                <rect key="frame" x="45" y="104" width="285" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="aZQ-aL-gPm"/>
                                 </constraints>
@@ -80,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QG-8Q-g4S">
-                                <rect key="frame" x="119.5" y="380" width="136" height="30"/>
+                                <rect key="frame" x="119.5" y="424" width="136" height="30"/>
                                 <state key="normal" title="Mudar cor de fundo"/>
                                 <connections>
                                     <action selector="changeColor:" destination="XcZ-3k-ieU" eventType="touchUpInside" id="30v-Fd-1GQ"/>
@@ -97,7 +107,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1sA-st-HAW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cor de fundo" id="J6B-ki-nQC"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Cor de fundo" id="J6B-ki-nQC">
+                        <barButtonItem key="rightBarButtonItem" title="Próxima" id="M0J-cu-Fjc">
+                            <connections>
+                                <segue destination="baW-qB-pkc" kind="show" id="cub-od-spJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lbMessage" destination="RF8-XH-Xvf" id="fxj-TB-g8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxP-B2-nz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-Lg-U6s">
-                                <rect key="frame" x="25" y="40" width="325" height="360"/>
+                                <rect key="frame" x="25" y="84" width="325" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-jy-qur">
                                         <rect key="frame" x="20" y="20" width="285" height="320"/>
@@ -133,9 +154,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gr-zU-vkM">
-                                <rect key="frame" x="127" y="410" width="121" height="30"/>
+                                <rect key="frame" x="127" y="454" width="121" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Mudar cor da tela"/>
+                                <connections>
+                                    <action selector="changeColorWith_sender:" destination="baW-qB-pkc" eventType="touchUpInside" id="b7s-jy-YN2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,8 +172,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOq-QF-Jxz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cor da tela" id="Tgm-W7-14q"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Cor da tela" id="Tgm-W7-14q">
+                        <barButtonItem key="rightBarButtonItem" title="Finalizar" id="QpI-vX-OQq">
+                            <connections>
+                                <segue destination="O4Y-J3-gDF" kind="show" id="hMc-Cc-0ax"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lbMessage" destination="lI7-jy-qur" id="j3t-Yu-BJ7"/>
                         <outlet property="viBorder" destination="hh3-Lg-U6s" id="pNT-Iu-cdM"/>
                     </connections>
                 </viewController>
@@ -197,6 +230,7 @@
                         <viewLayoutGuide key="safeArea" id="xoE-87-tDi"/>
                     </view>
                     <connections>
+                        <outlet property="lbMessage" destination="XmB-Rj-xcq" id="e2S-b5-g8X"/>
                         <outlet property="viBorder" destination="Osj-Pv-VSb" id="kmC-nR-OuL"/>
                     </connections>
                 </viewController>
