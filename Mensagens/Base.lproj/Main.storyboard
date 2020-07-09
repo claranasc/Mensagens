@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-wb-N4P">
-                                <rect key="frame" x="45" y="144" width="285" height="320"/>
+                                <rect key="frame" x="45" y="128" width="285" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="tSE-4t-cJp"/>
                                 </constraints>
@@ -28,8 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua mensagem" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-yO-gSQ">
-                                <rect key="frame" x="20" y="84" width="335" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="64" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
@@ -37,10 +34,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5N-ak-KqW">
-                                <rect key="frame" x="102" y="474" width="171" height="30"/>
+                                <rect key="frame" x="102" y="458" width="171" height="30"/>
                                 <state key="normal" title="Mudar cor da mensagem"/>
                                 <connections>
-                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jg-Cn-fXh"/>
+                                    <action selector="changeColorWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzt-Ge-GoJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,6 +69,83 @@
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
         </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="jKI-9b-0SV">
+            <objects>
+                <viewController storyboardIdentifier="ColorPickerViewController" id="xn4-Uc-dxk" customClass="ColorPickerViewController" customModule="Mensagens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YQb-qq-cPv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfS-z3-OZu">
+                                <rect key="frame" x="67.5" y="163.5" width="240" height="340"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5v-30-wZQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vIU-WI-Vgf">
+                                        <rect key="frame" x="20" y="154.5" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColor:" destination="xn4-Uc-dxk" eventType="valueChanged" id="eL9-L1-Wn9"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-Vc-AKZ">
+                                        <rect key="frame" x="20" y="251" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColor:" destination="xn4-Uc-dxk" eventType="valueChanged" id="S8E-cp-wv6"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAX-rD-VJF">
+                                        <rect key="frame" x="22" y="288" width="196" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Escolher cor"/>
+                                        <connections>
+                                            <action selector="chooseColor:" destination="xn4-Uc-dxk" eventType="touchUpInside" id="h7C-zg-YgL"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CGu-NE-nOa">
+                                        <rect key="frame" x="20" y="205" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.99167915240000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColor:" destination="xn4-Uc-dxk" eventType="valueChanged" id="lXe-gB-ppW"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="2tG-9B-qbA"/>
+                                    <constraint firstAttribute="height" constant="340" id="nIb-4H-Fsw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VfS-z3-OZu" firstAttribute="centerX" secondItem="YQb-qq-cPv" secondAttribute="centerX" id="N9n-Kq-24w"/>
+                            <constraint firstItem="VfS-z3-OZu" firstAttribute="centerY" secondItem="YQb-qq-cPv" secondAttribute="centerY" id="b6P-BP-l2p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tVd-Do-MEV"/>
+                    </view>
+                    <connections>
+                        <outlet property="slBlue" destination="o1x-Vc-AKZ" id="JC1-bV-RaX"/>
+                        <outlet property="slGreen" destination="CGu-NE-nOa" id="6cI-W4-bYf"/>
+                        <outlet property="slRed" destination="vIU-WI-Vgf" id="2SP-X5-Vg5"/>
+                        <outlet property="viColor" destination="w5v-30-wZQ" id="IGU-gQ-F6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dd3-kz-crC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264.8" y="-538.38080959520244"/>
+        </scene>
         <!--Cor de fundo-->
         <scene sceneID="oVx-Mc-QMT">
             <objects>
@@ -81,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-XH-Xvf">
-                                <rect key="frame" x="45" y="104" width="285" height="310"/>
+                                <rect key="frame" x="45" y="84" width="285" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="aZQ-aL-gPm"/>
                                 </constraints>
@@ -90,10 +164,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QG-8Q-g4S">
-                                <rect key="frame" x="119.5" y="424" width="136" height="30"/>
+                                <rect key="frame" x="119.5" y="404" width="136" height="30"/>
                                 <state key="normal" title="Mudar cor de fundo"/>
                                 <connections>
-                                    <action selector="changeColor:" destination="XcZ-3k-ieU" eventType="touchUpInside" id="30v-Fd-1GQ"/>
+                                    <action selector="changeColorWith_sender:" destination="XcZ-3k-ieU" eventType="touchUpInside" id="ZBv-oH-Ioj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -133,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-Lg-U6s">
-                                <rect key="frame" x="25" y="84" width="325" height="360"/>
+                                <rect key="frame" x="25" y="64" width="325" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-jy-qur">
                                         <rect key="frame" x="20" y="20" width="285" height="320"/>
@@ -154,21 +228,48 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gr-zU-vkM">
-                                <rect key="frame" x="127" y="454" width="121" height="30"/>
+                                <rect key="frame" x="127" y="434" width="121" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Mudar cor da tela"/>
                                 <connections>
-                                    <action selector="changeColorWith_sender:" destination="baW-qB-pkc" eventType="touchUpInside" id="b7s-jy-YN2"/>
+                                    <action selector="changeColorWith_sender:" destination="baW-qB-pkc" eventType="touchUpInside" id="CgW-o6-h1D"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCv-UB-k4Z">
+                                <rect key="frame" x="0.0" y="559" width="375" height="59"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuk-Eu-1XP">
+                                        <rect key="frame" x="306" y="14.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeBorder:" destination="baW-qB-pkc" eventType="valueChanged" id="oTl-PS-HFY"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usar borda branca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZI-rS-kmc">
+                                        <rect key="frame" x="156" y="19.5" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kuk-Eu-1XP" secondAttribute="trailing" constant="20" id="4D5-AM-biJ"/>
+                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="leading" secondItem="KZI-rS-kmc" secondAttribute="trailing" constant="8" id="6mm-zv-ktE"/>
+                                    <constraint firstAttribute="height" constant="60" id="F0t-kT-ScC"/>
+                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="centerY" secondItem="hCv-UB-k4Z" secondAttribute="centerY" id="NFt-OW-fkr"/>
+                                    <constraint firstItem="KZI-rS-kmc" firstAttribute="centerY" secondItem="hCv-UB-k4Z" secondAttribute="centerY" id="oVp-JO-g8W"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hCv-UB-k4Z" firstAttribute="trailing" secondItem="FOq-QF-Jxz" secondAttribute="trailing" id="3Bu-Oa-9SK"/>
                             <constraint firstItem="FOq-QF-Jxz" firstAttribute="trailing" secondItem="hh3-Lg-U6s" secondAttribute="trailing" constant="25" id="6dA-yX-lux"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="top" secondItem="hh3-Lg-U6s" secondAttribute="bottom" constant="10" id="Ff4-fe-Y0r"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="centerX" secondItem="hh3-Lg-U6s" secondAttribute="centerX" id="MXs-86-P2S"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" constant="25" id="dQJ-od-UWn"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="top" secondItem="FOq-QF-Jxz" secondAttribute="top" constant="20" id="guk-j0-SrF"/>
+                            <constraint firstItem="hCv-UB-k4Z" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" id="ieh-C0-3j5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOq-QF-Jxz"/>
                     </view>
@@ -183,12 +284,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="lbMessage" destination="lI7-jy-qur" id="j3t-Yu-BJ7"/>
+                        <outlet property="swWhiteBorder" destination="kuk-Eu-1XP" id="BV2-eY-YZ9"/>
                         <outlet property="viBorder" destination="hh3-Lg-U6s" id="pNT-Iu-cdM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVW-27-K1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="133"/>
+            <point key="canvasLocation" x="1980" y="132.68365817091455"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="idx-DO-QI4">
@@ -244,7 +346,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OUb-NA-HZ3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e48-AR-d9c">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

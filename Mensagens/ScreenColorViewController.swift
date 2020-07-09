@@ -10,6 +10,7 @@ import UIKit
 class ScreenColorViewController: BaseViewController {
     
     @IBOutlet weak var viBorder: UIView!
+    @IBOutlet weak var swWhiteBorder: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,21 @@ class ScreenColorViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ResultViewController
+        vc.message = message
+    }
+    
+    @IBAction func changeBorder(_ sender: UISwitch) {
+        viBorder.backgroundColor = sender.isOn ? .white : .clear
+    }
+    
+    override func changeColor(_sender: UIButton) {
+        let colorPicker = storyboard?.instantiateViewController(withIdentifier: "ColorPickerViewController") as! ColorPickerViewController
+        colorPicker.modalPresentationStyle = .overCurrentContext
+        present(colorPicker, animated: true, completion: nil)
     }
     
 }
