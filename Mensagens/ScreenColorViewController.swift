@@ -14,27 +14,27 @@ class ScreenColorViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lbMessage.text = message.text
+        lbMessage.textColor = message.textColor
+        lbMessage.backgroundColor = message.backgroundColor
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ResultViewController
         vc.message = message
+        vc.useWriteBorder = swWhiteBorder.isOn
     }
-    
     @IBAction func changeBorder(_ sender: UISwitch) {
         viBorder.backgroundColor = sender.isOn ? .white : .clear
     }
-    
-    override func changeColor(_sender: UIButton) {
-        let colorPicker = storyboard?.instantiateViewController(withIdentifier: "ColorPickerViewController") as! ColorPickerViewController
-        colorPicker.modalPresentationStyle = .overCurrentContext
-        present(colorPicker, animated: true, completion: nil)
-    }
-    
 }
 
+extension ScreenColorViewController: ColorPickerDelegate {
+    func applyColor(color: UIColor) {
+        view.backgroundColor = color
+        message.screenColor = color
+    }
+}

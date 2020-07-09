@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+            <point key="canvasLocation" x="546" y="133"/>
         </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="jKI-9b-0SV">
@@ -235,41 +235,44 @@
                                     <action selector="changeColorWith_sender:" destination="baW-qB-pkc" eventType="touchUpInside" id="CgW-o6-h1D"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCv-UB-k4Z">
-                                <rect key="frame" x="0.0" y="559" width="375" height="59"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBP-6z-wYR">
+                                <rect key="frame" x="0.0" y="558" width="375" height="60"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuk-Eu-1XP">
-                                        <rect key="frame" x="306" y="14.5" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="changeBorder:" destination="baW-qB-pkc" eventType="valueChanged" id="oTl-PS-HFY"/>
-                                        </connections>
-                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usar borda branca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZI-rS-kmc">
-                                        <rect key="frame" x="156" y="19.5" width="142" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="163" y="20" width="135" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuk-Eu-1XP">
+                                        <rect key="frame" x="306" y="14.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeBorder:" destination="baW-qB-pkc" eventType="valueChanged" id="hKO-sH-8Y8"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kuk-Eu-1XP" secondAttribute="trailing" constant="20" id="4D5-AM-biJ"/>
-                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="leading" secondItem="KZI-rS-kmc" secondAttribute="trailing" constant="8" id="6mm-zv-ktE"/>
-                                    <constraint firstAttribute="height" constant="60" id="F0t-kT-ScC"/>
-                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="centerY" secondItem="hCv-UB-k4Z" secondAttribute="centerY" id="NFt-OW-fkr"/>
-                                    <constraint firstItem="KZI-rS-kmc" firstAttribute="centerY" secondItem="hCv-UB-k4Z" secondAttribute="centerY" id="oVp-JO-g8W"/>
+                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="leading" secondItem="KZI-rS-kmc" secondAttribute="trailing" constant="8" id="N4M-fh-p8Q"/>
+                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="centerY" secondItem="hBP-6z-wYR" secondAttribute="centerY" id="PQH-WU-dyt"/>
+                                    <constraint firstAttribute="trailing" secondItem="kuk-Eu-1XP" secondAttribute="trailing" constant="20" id="jMx-Gj-5Gd"/>
+                                    <constraint firstItem="KZI-rS-kmc" firstAttribute="centerY" secondItem="hBP-6z-wYR" secondAttribute="centerY" id="nbn-sE-Tu6"/>
+                                    <constraint firstAttribute="height" constant="60" id="qix-x4-hK5"/>
+                                    <constraint firstItem="kuk-Eu-1XP" firstAttribute="centerY" secondItem="hBP-6z-wYR" secondAttribute="centerY" id="s12-hC-SbQ"/>
+                                    <constraint firstItem="KZI-rS-kmc" firstAttribute="centerY" secondItem="hBP-6z-wYR" secondAttribute="centerY" id="yof-jr-bvy"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hCv-UB-k4Z" firstAttribute="trailing" secondItem="FOq-QF-Jxz" secondAttribute="trailing" id="3Bu-Oa-9SK"/>
+                            <constraint firstItem="hBP-6z-wYR" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" id="0SG-yG-g39"/>
                             <constraint firstItem="FOq-QF-Jxz" firstAttribute="trailing" secondItem="hh3-Lg-U6s" secondAttribute="trailing" constant="25" id="6dA-yX-lux"/>
+                            <constraint firstItem="hBP-6z-wYR" firstAttribute="bottom" secondItem="FOq-QF-Jxz" secondAttribute="bottom" id="8md-XD-VXK"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="top" secondItem="hh3-Lg-U6s" secondAttribute="bottom" constant="10" id="Ff4-fe-Y0r"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="centerX" secondItem="hh3-Lg-U6s" secondAttribute="centerX" id="MXs-86-P2S"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" constant="25" id="dQJ-od-UWn"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="top" secondItem="FOq-QF-Jxz" secondAttribute="top" constant="20" id="guk-j0-SrF"/>
-                            <constraint firstItem="hCv-UB-k4Z" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" id="ieh-C0-3j5"/>
+                            <constraint firstItem="hBP-6z-wYR" firstAttribute="trailing" secondItem="FOq-QF-Jxz" secondAttribute="trailing" id="t8J-A7-I3k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOq-QF-Jxz"/>
                     </view>
@@ -284,7 +287,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="lbMessage" destination="lI7-jy-qur" id="j3t-Yu-BJ7"/>
-                        <outlet property="swWhiteBorder" destination="kuk-Eu-1XP" id="BV2-eY-YZ9"/>
+                        <outlet property="swWhiteBorder" destination="kuk-Eu-1XP" id="Oh5-Lx-EnP"/>
                         <outlet property="viBorder" destination="hh3-Lg-U6s" id="pNT-Iu-cdM"/>
                     </connections>
                 </viewController>
@@ -338,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1l-e4-t9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749.5999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="2687" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zzk-BN-5Sw">
@@ -356,7 +359,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQk-9v-OYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-321" y="133"/>
+            <point key="canvasLocation" x="-167" y="133"/>
         </scene>
     </scenes>
 </document>
